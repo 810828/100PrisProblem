@@ -36,20 +36,20 @@ function init() {
 
 function loadPrisArray(arr) {
     //* my solution  %%%%%%%%%%%%%%%
-    // let newSet = new Set(); 
-    // while (newSet.size < arr.length) {
-    //     let randomNumber = Math.floor(Math.random() * arr.length);
-    //     newSet.add(randomNumber);
-    // }
-    // console.log(newSet)
-    // pris = [...newSet]
+    let newSet = new Set();
+    while (newSet.size < arr.length) {
+        let randomNumber = Math.floor(Math.random() * arr.length);
+        newSet.add(randomNumber);
+    }
+    console.log(newSet)
+    pris = [...newSet]
     //*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-    for (let i = 0; i < arr.length; i++) { //* chatGBTs solution
-        pris[i] = i;
-    }
-    pris.sort(() => Math.random() - 0.5)
+    // for (let i = 0; i < arr.length; i++) { //* chatGBTs solution
+    //     pris[i] = i;
+    // }
+    // pris.sort(() => Math.random() - 0.5)
     /*
     return value	sort order
      > 0	      sort a after b, e.g. [b, a]
@@ -60,15 +60,15 @@ function loadPrisArray(arr) {
 
 
     // console.log("pris array: ");
-    // console.log(pris);
+    console.log(pris);
 }
 function getLoopLength(prisNum) {
-    let count = 0;
+    let count = 1;
     let boxNum = pris[prisNum]
     while (prisNum != boxNum) {
         count++;
         boxNum = pris[boxNum];
     }
-    return count + 1;
+    return count;
 }
 
